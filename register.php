@@ -23,19 +23,22 @@
    </div>
    <div class="chart" >
       <div style=''>
-         <span>Sign In</span><br><br>
-         <form action="./access.php" method='POST'>
+         <span>Profile</span><br><br>
+         <form action="./save.php" method='POST'>
             <input type="text" class="boxinput" name='username' placeholder='Username'><br>
             <input type="password" class="boxinput" name='password' placeholder='Password'><br>
-            <input type="submit" class="submit" value='Sign In'>
-            <button onclick='call()' type="button" class='submit'>Register</button>
+            <input type="text" class="boxinput" name='firstname' placeholder='First Name'><br>
+            <input type="text" class="boxinput" name='lastname' placeholder='Last Name'><br>
+            <input type="submit" class="submit" value='Register'>
+            <button onclick='call()' type="button" class='submit'>Cancel</button>
+            <!--input type='button' class="submit" value='Cancel'-->
          </form>
       </div>
    </div>
 </body>
 <script>
-   function call(){
-      window.location="./register.php";
-   }
+function call(){
+   window.location="./index.php";
+}
 </script>
 </html>

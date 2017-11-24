@@ -8,3 +8,5 @@ $user='root';
 $db='butu';
 $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 $acentos = $mysqli->query("SET NAMES 'utf8'");
+
+
