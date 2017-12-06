@@ -10,7 +10,7 @@ $n=$mysqli->query("SELECT * FROM tbl_user");
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" type="text/css" href="style.css"> 
-   <title>Document</title>
+   <title>Carolina</title>
 </head>
 <body>
    <div class='post'>
@@ -31,31 +31,55 @@ $n=$mysqli->query("SELECT * FROM tbl_user");
          <span>Listado de Usuarios</span><br><br>
          <?php 
             echo"
-               <table align='center'>
+               <table align='center' style='font-size:12px;width:40%;border-collapse:collapse;'>
                <tr>
-                  <th>Full Name</th>
-                  <th>Username</th>
-                  <th>Password</th>
+                  
+                  <th style='width:5%;'>Username</th>
+                  <th style='width:5%;'>Password</th>
+                  <th style='width:5%;'>Role</th>
+                  <th style='width:5%;'>Privilege</th>
+                  <th style='width:10%'></th>
+                  <th style='width:10%'></th>
                </tr>
             ";
             while($user=$n->fetch_assoc()){
                echo"
                   <tr>
-                     <td style='width:35%;padding-top:15px;text-align:left;'>
-                        <span style='margin-top:20px;'>".$user['lastname'].", ".$user['firstname']." </span><br>
-                     </td>
-                     <td style='width:35%;'>
+                     
+                     <td>
                         <span style='margin-top:20px;'>".$user['username']."</span><br>
                      </td>
-                     <td style='width:35%;'>
+                     <td>
                         <span style='margin-top:20px;'>".base64_decode($user['password'])."</span><br>
+                     </td>
+                     <td>
+                        <select>
+                           <option>Estudiante</option>
+                           <option>Profesor</option>
+                           <option>Administrador</option>
+                        </select>
+                     </td>
+                     <td>
+                        <select>
+                           <option>Solo ver</option>
+                           <option>Ver y Listar</option>
+                           <option>Global</option>
+                        </select>
+                     </td>
+                     <td>
+                     <a class='submit' style='background-color:green;color:white;font-size:10px;text-decoration:none;box-shadow:none;padding:5px;' href='./edit.php?id=".$user['cod_user']."'>Editar</a>
+                     </td>
+                     <td>
+                        <a class='submit' style='background-color:red;color:white;font-size:10px;text-decoration:none;box-shadow:none;padding:5px;' href='./delete.php?id=".$user['cod_user']."'>Eliminar</a>
                      </td>
                   </tr>
                ";
             }
             echo "</table>
             ";
-            echo "<br><br><button onclick='recall()' type='button' class='submit'>Back</button><br>";
+            echo "<br><br><button onclick='recall()' type='button' class='submit'>Back</button>
+            <button onclick='adduser()' type='button' class='submit'>Add User</button><br>
+            ";
          ?>
       </div>
    </div>
@@ -63,6 +87,10 @@ $n=$mysqli->query("SELECT * FROM tbl_user");
 <script>
    function recall(){
       window.location="./session.php";
+   }
+
+   function adduser(){
+      window.location="./register.php";
    }
 </script>
 </html>

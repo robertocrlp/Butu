@@ -23,12 +23,12 @@
    </div>
    <div class="chart" >
       <div style=''>
-         <span>Profile</span><br><br>
+         <sdpan>Add User</sdpan><br><br>
          <form action="./save.php" method='POST'>
-            <input type="text" class="boxinput" name='username' placeholder='Username'><br>
-            <input type="password" class="boxinput" name='password' placeholder='Password'><br>
-            <input type="text" class="boxinput" name='firstname' placeholder='First Name'><br>
-            <input type="text" class="boxinput" name='lastname' placeholder='Last Name'><br>
+            <input type="text" class="boxinput" name='username' placeholder='Username' required><br>
+            <input type="password" class="boxinput" name='password' placeholder='Password' required><br>
+            <input type="text" class="boxinput" name='firstname' placeholder='First Name' required><br>
+            <input type="text" class="boxinput" name='lastname' placeholder='Last Name' required><br>
             <input type="submit" class="submit" value='Register'>
             <button onclick='call()' type="button" class='submit'>Cancel</button>
             <!--input type='button' class="submit" value='Cancel'-->
@@ -38,7 +38,7 @@
 </body>
 <script>
 function call(){
-   window.location="./index.php";
+   window.location="./showlist.php";
 }
 </script>
 </html>

@@ -28,7 +28,7 @@
             <input type="text" class="boxinput" name='username' placeholder='Username'><br>
             <input type="password" class="boxinput" name='password' placeholder='Password'><br>
             <input type="submit" class="submit" value='Sign In'>
-            <button onclick='call()' type="button" class='submit'>Register</button>
+            <!--button onclick='call()' type="button" class='submit'>Register</button-->
          </form>
       </div>
    </div>

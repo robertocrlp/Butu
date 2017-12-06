@@ -18,6 +18,6 @@ $sentence="INSERT INTO tbl_user (permission,username,password,firstname,lastname
 VALUES(1,'$username','$passwordd','$firstname','$lastname')";
 $mysqli->query($sentence);
 
-header('location: ./session.php');
+header('location: ./showlist.php');
 
 ?>
